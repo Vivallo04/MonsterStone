@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="284.0" y="332.0">com.vivallo.monster.launcher.Main</node>
+    <node x="159.0" y="332.0">com.vivallo.monster.cards.Card</node>
+    <node x="0.0" y="0.0">com.vivallo.monster.cards.CircularLinkedList</node>
+    <node x="221.0" y="166.0">com.vivallo.monster.cards.Node</node>
+    <node x="0.0" y="332.0">com.vivallo.monster.deck.Node</node>
+    <node x="0.0" y="166.0">com.vivallo.monster.deck.SinglyLinkedList</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic Group" zoom="1.2000000000000002" x="652.9999999999999" y="222.0833333333333" />
+  <SelectedNodes>
+    <node>com.vivallo.monster.cards.Card</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

@@ -17,14 +17,15 @@ public class CircularLinkedList {
 
 
     public void appendCard(Card element){
-
         Node newNode = new Node(element);
 
         if(isEmpty()) {
-          head = newNode;
-          tail = newNode;
-          newNode.next = head;
+            size++;
+            head = newNode;
+            tail = newNode;
+            newNode.next = head;
         } else {
+            size++;
             tail.next = newNode;
             tail = newNode;
             tail.next = head;

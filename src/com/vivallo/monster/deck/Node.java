@@ -1,4 +1,6 @@
-package com.vivallo.monster.cards;
+package com.vivallo.monster.deck;
+
+import com.vivallo.monster.cards.Card;
 
 public class Node {
 
@@ -9,8 +11,7 @@ public class Node {
         this.element = element;
     }
 
-   public Card getElement() {
+    public Card getElement() {
         return this.element;
-   }
-
+    }
 }
