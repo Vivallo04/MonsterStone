@@ -1,9 +1,16 @@
 package com.vivallo.monster.launcher;
+/*
+* May the glory be for God
+*
+* @author: Andrés Vivallo
+ */
+
 
 public class Main {
 
     public static void main(String[] args) {
-        Display display = new Display(1000, 600);
+
+      new Thread(new GameLoop(new Game(1000, 600))).start();
 
     }
 }

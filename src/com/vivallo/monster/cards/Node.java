@@ -9,8 +9,8 @@ public class Node {
         this.element = element;
     }
 
-   public Card getElement() {
+   public Card getElement(){
         return this.element;
-   }
+    }
 
 }

@@ -8,7 +8,7 @@ import com.vivallo.monster.cards.Card;
 *
 */
 
-public class SinglyLinkedList {
+public class DeckStack {
 
     public Node next;
     public Node head = null;

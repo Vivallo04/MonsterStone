@@ -2,6 +2,7 @@ package com.vivallo.monster.launcher;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.BufferStrategy;
 
 public class Display extends JFrame {
 
@@ -18,7 +19,26 @@ public class Display extends JFrame {
         add(canvas);
         pack();
 
+        canvas.createBufferStrategy(3);
+
+
+
         setLocationRelativeTo(null);
         setVisible(true);
+    }
+
+
+    public void render(Game game) {
+        BufferStrategy bufferStrategy = canvas.getBufferStrategy();
+        Graphics graphics = bufferStrategy.getDrawGraphics();
+
+        graphics.setColor(Color.BLACK);
+        graphics.fillRect(0, 0, canvas.getWidth(), canvas.getHeight());
+
+        //Free the graphics memory
+        graphics.dispose();
+        bufferStrategy.show();
+
+
     }
 }
