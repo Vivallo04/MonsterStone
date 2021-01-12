@@ -1,6 +1,6 @@
 package com.vivallo.monster.cards;
 
-public class CircularLinkedList {
+public class CircularHand {
 
     public Node head = null;
     public Node tail = null;
