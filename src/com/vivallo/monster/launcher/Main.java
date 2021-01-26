@@ -1,16 +1,21 @@
 package com.vivallo.monster.launcher;
-/*
-* May the glory be for God
-*
-* @author: Andrés Vivallo
+
+/**
+ * Costa Rica 2020 - TEC
+ * May the glory be for God
+ *
+ * @author Andrés Vivallo
+ * @version 1.0
  */
+
+import com.vivallo.monster.UI.Game;
+import java.io.IOException;
 
 
 public class Main {
 
-    public static void main(String[] args) {
-
-      new Thread(new GameLoop(new Game(1000, 600))).start();
+    public static void main(String[] args) throws IOException {
+        new Thread((Runnable) new Game()).start();
 
     }
 }

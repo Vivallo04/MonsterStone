@@ -9,6 +9,7 @@ import java.net.Socket;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+
 /**
  * This class manages all
  * the client messages in order
@@ -55,9 +56,9 @@ public class Client {
      * @param port: Client port
      */
 
-    public Client(String host, String port) {
+    public Client(String host, int port) {
         host = host;
-        port = Integer.parseInt(port);
+        port = Integer.parseInt(String.valueOf(port));
     }
 
 
@@ -87,7 +88,7 @@ public class Client {
 
 
     /** Getters & Setters
-     * return Host & port respectively
+     * @return: Host & port respectively
      *
      */
 
