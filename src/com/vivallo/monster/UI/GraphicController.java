@@ -13,6 +13,7 @@ public class GraphicController extends JComponent {
     private final Image background;
     private Observer Observer;
 
+
     /**Constructor
      *
      * @param fileName background file directory
