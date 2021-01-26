@@ -1,0 +1,425 @@
+{
+  "name": "player",
+  "version": "1.0.0",
+  "dependencies":{
+  },
+
+  "1": {
+    "id": "Main",
+    "type": "Minion",
+    "name": "",
+    "rarity": "",
+    "cost": 2,
+    "attack": 5,
+    "heal": false,
+    "steal": false,
+    "power": null,
+    "freeze": false,
+    "event": "The player used Main card."
+  },
+
+  "2": {
+    "id": "Main",
+    "type": "Minion",
+    "name": "",
+    "rarity": "",
+    "cost": 2,
+    "attack": 5,
+    "heal": false,
+    "steal": false,
+    "power": null,
+    "freeze": false,
+    "event": "The player used Main card."
+  },
+
+  "3": {
+    "id": "Main",
+    "type": "Minion",
+    "name": "",
+    "rarity": "",
+    "cost": 2,
+    "attack": 5,
+    "heal": false,
+    "steal": false,
+    "power": null,
+    "freeze": false,
+    "event": "The player used Main card."
+  },
+
+  "4": {
+    "id": "Main",
+    "type": "Minion",
+    "name": "",
+    "rarity": "",
+    "cost": 2,
+    "attack": 5,
+    "heal": false,
+    "steal": false,
+    "power": null,
+    "freeze": false,
+    "event": "The player used Main card."
+  },
+
+  "5": {
+    "id": "Main",
+    "type": "Minion",
+    "name": "",
+    "rarity": "",
+    "cost": 2,
+    "attack": 5,
+    "heal": false,
+    "steal": false,
+    "power": null,
+    "freeze": false,
+    "event": "The player used Main card."
+  },
+
+  "6": {
+    "id": "Main",
+    "type": "Minion",
+    "name": "",
+    "rarity": "",
+    "cost": 2,
+    "attack": 5,
+    "heal": false,
+    "steal": false,
+    "power": null,
+    "freeze": false,
+    "event": "The player used Main card."
+  },
+
+  "7": {"id": "Main",
+    "type": "Minion",
+    "name": "",
+    "rarity": "",
+    "cost": 2,
+    "attack": 5,
+    "heal": false,
+    "steal": false,
+    "power": null,
+    "freeze": false,
+    "event": "The player used Main card."
+  },
+
+  "8": {
+    "id": "Main",
+    "type": "Minion",
+    "name": "",
+    "rarity": "",
+    "cost": 2,
+    "attack": 5,
+    "heal": false,
+    "steal": false,
+    "power": null,
+    "freeze": false,
+    "event": "The player used Main card."
+  },
+
+  "9": {
+    "id": "Main",
+    "type": "Minion",
+    "name": "",
+    "rarity": "",
+    "cost": 2,
+    "attack": 5,
+    "heal": false,
+    "steal": false,
+    "power": null,
+    "freeze": false,
+    "event": "The player used Main card."
+  },
+
+  "10": {
+    "id": "Main",
+    "type": "Minion",
+    "name": "",
+    "rarity": "",
+    "cost": 2,
+    "attack": 5,
+    "heal": false,
+    "steal": false,
+    "power": null,
+    "freeze": false,
+    "event": "The player used Main card."
+  },
+
+  "11": {
+    "id": "Main",
+    "type": "Minion",
+    "name": "",
+    "rarity": "",
+    "cost": 2,
+    "attack": 5,
+    "heal": false,
+    "steal": false,
+    "power": null,
+    "freeze": false,
+    "event": "The player used Main card."
+  },
+
+  "12": {
+    "id": "Main",
+    "type": "Minion",
+    "name": "",
+    "rarity": "",
+    "cost": 2,
+    "attack": 5,
+    "heal": false,
+    "steal": false,
+    "power": null,
+    "freeze": false,
+    "event": "The player used Main card."
+  },
+
+  "13": {
+    "id": "Main",
+    "type": "Minion",
+    "name": "",
+    "rarity": "",
+    "cost": 2,
+    "attack": 5,
+    "heal": false,
+    "steal": false,
+    "power": null,
+    "freeze": false,
+    "event": "The player used Main card."
+  },
+
+  "14": {
+    "id": "Main",
+    "type": "Minion",
+    "name": "",
+    "rarity": "",
+    "cost": 2,
+    "attack": 5,
+    "heal": false,
+    "steal": false,
+    "power": null,
+    "freeze": false,
+    "event": "The player used Main card."
+  },
+
+  "15": {
+    "id": "Main",
+    "type": "Minion",
+    "name": "",
+    "rarity": "",
+    "cost": 2,
+    "attack": 5,
+    "heal": false,
+    "steal": false,
+    "power": null,
+    "freeze": false,
+    "event": "The player used Main card."
+  },
+
+  "16": {
+    "id": "Main",
+    "type": "Minion",
+    "name": "",
+    "rarity": "",
+    "cost": 2,
+    "attack": 5,
+    "heal": false,
+    "steal": false,
+    "power": null,
+    "freeze": false,
+    "event": "The player used Main card."
+  },
+
+  "17": {
+    "id": "Main",
+    "type": "Minion",
+    "name": "",
+    "rarity": "",
+    "cost": 2,
+    "attack": 5,
+    "heal": false,
+    "steal": false,
+    "power": null,
+    "freeze": false,
+    "event": "The player used Main card."
+  },
+
+  "18": {
+    "id": "Main",
+    "type": "Minion",
+    "name": "",
+    "rarity": "",
+    "cost": 2,
+    "attack": 5,
+    "heal": false,
+    "steal": false,
+    "power": null,
+    "freeze": false,
+    "event": "The player used Main card."
+  },
+
+  "19": {
+    "id": "Main",
+    "type": "Minion",
+    "name": "",
+    "rarity": "",
+    "cost": 2,
+    "attack": 5,
+    "heal": false,
+    "steal": false,
+    "power": null,
+    "freeze": false,
+    "event": "The player used Main card."
+  },
+
+  "20": {
+    "id": "Main",
+    "type": "Minion",
+    "name": "",
+    "rarity": "",
+    "cost": 2,
+    "attack": 5,
+    "heal": false,
+    "steal": false,
+    "power": null,
+    "freeze": false,
+    "event": "The player used Main card."
+  },
+
+  "21": {
+    "id": "Main",
+    "type": "Minion",
+    "name": "",
+    "rarity": "",
+    "cost": 2,
+    "attack": 5,
+    "heal": false,
+    "steal": false,
+    "power": null,
+    "freeze": false,
+    "event": "The player used Main card."
+  },
+
+  "22": {
+    "id": "Main",
+    "type": "Minion",
+    "name": "",
+    "rarity": "",
+    "cost": 2,
+    "attack": 5,
+    "heal": false,
+    "steal": false,
+    "power": null,
+    "freeze": false,
+    "event": "The player used Main card."
+  },
+
+  "23": {
+    "id": "Main",
+    "type": "Minion",
+    "name": "",
+    "rarity": "",
+    "cost": 2,
+    "attack": 5,
+    "heal": false,
+    "steal": false,
+    "power": null,
+    "freeze": false,
+    "event": "The player used Main card."
+  },
+
+  "24": {
+    "id": "Main",
+    "type": "Minion",
+    "name": "",
+    "rarity": "",
+    "cost": 2,
+    "attack": 5,
+    "heal": false,
+    "steal": false,
+    "power": null,
+    "freeze": false,
+    "event": "The player used Main card."
+  },
+
+  "25": {
+    "id": "Main",
+    "type": "Minion",
+    "name": "",
+    "rarity": "",
+    "cost": 2,
+    "attack": 5,
+    "heal": false,
+    "steal": false,
+    "power": null,
+    "freeze": false,
+    "event": "The player used Main card."
+  },
+
+  "26": {
+    "id": "Main",
+    "type": "Minion",
+    "name": "",
+    "rarity": "",
+    "cost": 2,
+    "attack": 5,
+    "heal": false,
+    "steal": false,
+    "power": null,
+    "freeze": false,
+    "event": "The player used Main card."
+  },
+
+  "27": {
+    "id": "Main",
+    "type": "Minion",
+    "name": "",
+    "rarity": "",
+    "cost": 2,
+    "attack": 5,
+    "heal": false,
+    "steal": false,
+    "power": null,
+    "freeze": false,
+    "event": "The player used Main card."
+  },
+
+  "28": {
+    "id": "Main",
+    "type": "Minion",
+    "name": "",
+    "rarity": "",
+    "cost": 2,
+    "attack": 5,
+    "heal": false,
+    "steal": false,
+    "power": null,
+    "freeze": false,
+    "event": "The player used Main card."
+  },
+
+  "29": {
+    "id": "Main",
+    "type": "Minion",
+    "name": "",
+    "rarity": "",
+    "cost": 2,
+    "attack": 5,
+    "heal": false,
+    "steal": false,
+    "power": null,
+    "freeze": false,
+    "event": "The player used Main card."
+  },
+
+  "30": {
+    "id": "Main",
+    "type": "Minion",
+    "name": "",
+    "rarity": "",
+    "cost": 2,
+    "attack": 5,
+    "heal": false,
+    "steal": false,
+    "power": null,
+    "freeze": false,
+    "event": "The player used Main card."
+  }
+}
