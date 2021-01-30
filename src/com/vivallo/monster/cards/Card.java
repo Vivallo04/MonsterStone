@@ -1,34 +1,79 @@
 package com.vivallo.monster.cards;
 
-public abstract class Card implements CardReader {
+import com.google.gson.Gson;
+import com.google.gson.stream.JsonReader;
 
-    protected int cost;
-    protected int heal;
-    protected int attack;
-    protected Card type;
-    protected String id;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+
+public class Card implements CardReader {
+
+    protected int id;
+    protected String type;
     protected String name;
-    protected Boolean steal;
-    protected Boolean power;
-    protected Boolean freeze;
+    protected String rarity;
+    protected int cost;
+    protected int attack;
+    protected boolean heal;
+    protected boolean steal;
+    protected boolean power;
+    protected boolean freeze;
     protected String event;
 
+    private static final Gson gson = new Gson();
+
+
+    public static void getCards() throws FileNotFoundException {
+        JsonReader cardsFile = new JsonReader(new FileReader("src/cards.json"));
+        Card[] cards = gson.fromJson(cardsFile, Card[].class);
+        for (Card card: cards) {
+            card.getEvent();
+        }
+    }
+
+
+    public int getId() {
+        return id;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getRarity() {
+        return rarity;
+    }
+
     public int getCost() {
-        return this.cost;
+        return cost;
     }
 
-    public int getDamage() {
-        return this.attack;
+    public int getAttack() {
+        return attack;
     }
 
-    public Card getType() {
-        return this.type;
+    public boolean isHeal() {
+        return heal;
     }
 
-    public String getId() {
-
-        return this.id;
+    public boolean isSteal() {
+        return steal;
     }
 
+    public boolean isPower() {
+        return power;
+    }
+
+    public boolean isFreeze() {
+        return freeze;
+    }
+
+    public String getEvent() {
+        return event;
+    }
 
 }
