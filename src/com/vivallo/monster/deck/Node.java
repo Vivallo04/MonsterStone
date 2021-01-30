@@ -4,14 +4,14 @@ import com.vivallo.monster.cards.Card;
 
 public class Node {
 
-    public Card element;
+    public Card[] element;
     public Node next;
 
-    public Node(Card element) {
+    public Node(Card[] element) {
         this.element = element;
     }
 
-    public Card getElement() {
+    public Card[] getElement() {
         return this.element;
     }
 }

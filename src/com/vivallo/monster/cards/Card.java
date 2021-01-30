@@ -6,7 +6,7 @@ import com.google.gson.stream.JsonReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 
-public class Card implements CardReader {
+public class Card {
 
     protected int id;
     protected String type;
@@ -22,6 +22,11 @@ public class Card implements CardReader {
 
     private static final Gson gson = new Gson();
 
+    /**
+     * Read "cards.json" file which contains all the
+     * different cards for the game
+     * @throws FileNotFoundException
+     */
 
     public static void getCards() throws FileNotFoundException {
         JsonReader cardsFile = new JsonReader(new FileReader("src/cards.json"));

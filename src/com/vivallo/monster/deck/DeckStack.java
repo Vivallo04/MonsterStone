@@ -11,27 +11,28 @@ import com.vivallo.monster.cards.Card;
 public class DeckStack {
 
     public Node next;
-    public Node head = null;
+    public Node head;
     public int size = 0;
 
 
     /**
-     *
+     *Add a card to the tail of the
+     * stack
      * @param element to append
-     *
      */
+    public void appendCard(Card[] element) {
 
-    public void append(Card element) {
-        Node newNode = new Node(element);
-        size++;
         if (isEmpty()) {
-            head = newNode;
+            head = new Node(element);
+            size++;
+
         } else {
-            newNode = head;
-            while (newNode != null) {
-                newNode = newNode.next;
+            Node current = head;
+            while (current.next != null) {
+                current = current.next;
             }
-            newNode.next = new Node(element);
+            current.next = new Node(element);
+            size++;
         }
     }
 

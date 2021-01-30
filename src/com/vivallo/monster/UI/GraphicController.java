@@ -8,20 +8,21 @@ import java.awt.event.MouseMotionListener;
 import java.io.File;
 import java.io.IOException;
 
-public class GraphicController extends JComponent {
+public class GraphicController extends JPanel {
 
     private final Image background;
+    private final Image cardStack;
     private Observer Observer;
 
 
-    /**Constructor
-     *
-     * @param fileName background file directory
+    /**
+     * Constructor, draw everything on screen
      * @throws IOException Not found
      */
+    public GraphicController() throws IOException {
+        background = ImageIO.read(new File("assets/board/table2.png"));
+        cardStack = ImageIO.read(new File("assets/cards/cardFinalSize.png"));
 
-    public GraphicController(String fileName) throws IOException {
-        background = ImageIO.read(new File(fileName));
         dragCard();
     }
 
@@ -33,11 +34,13 @@ public class GraphicController extends JComponent {
     public void paintComponent(Graphics graphics) {
         super.paintComponent(graphics);
         graphics.drawImage(background, 0, 0, Observer);
+        graphics.drawImage(cardStack, 736, 340, Observer);
+
     }
 
 
-    /**Handle Mouse Events
-     *
+    /**
+     *Handle Mouse events
      */
     public void dragCard() {
 

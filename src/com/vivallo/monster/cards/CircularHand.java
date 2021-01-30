@@ -16,7 +16,7 @@ public class CircularHand {
     }
 
 
-    public void appendCard(Card element){
+    public void appendCard(Card[] element){
         Node newNode = new Node(element);
 
         if(isEmpty()) {

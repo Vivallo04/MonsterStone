@@ -88,10 +88,9 @@ public class Client {
 
 
     /** Getters & Setters
-     * @return: Host & port respectively
+     * @return Host & port respectively
      *
      */
-
 
     public String getHOST() {
         return HOST;
