@@ -9,13 +9,14 @@ package com.vivallo.monster.launcher;
  */
 
 import com.vivallo.monster.UI.Game;
+import com.vivallo.monster.cards.Card;
+
 import java.io.IOException;
 
 
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        new Game().run();
-
+        new Game();
     }
 }

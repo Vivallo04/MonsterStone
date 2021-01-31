@@ -1,7 +1,10 @@
 package com.vivallo.monster.player;
 
+import com.vivallo.monster.deck.Deck;
+
 public class Player {
 
+    public Deck deck;
     private int maxMana = 200;
     private int minMana = 0;
     private int mana;

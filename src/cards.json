@@ -10,7 +10,7 @@
     "power": null,
     "freeze": false,
     "event": "The player used Main card.",
-    "file": ""
+    "file": "assets/cards/Card0.png"
 
   },
 

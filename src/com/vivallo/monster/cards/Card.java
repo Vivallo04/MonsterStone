@@ -19,6 +19,7 @@ public class Card {
     protected boolean power;
     protected boolean freeze;
     protected String event;
+    protected String file;
 
     private static final Gson gson = new Gson();
 
@@ -26,16 +27,42 @@ public class Card {
      * Read "cards.json" file which contains all the
      * different cards for the game
      * @throws FileNotFoundException
+     * @return
      */
-
-    public static void getCards() throws FileNotFoundException {
+    public Class<? extends Card> getCards() throws FileNotFoundException {
         JsonReader cardsFile = new JsonReader(new FileReader("src/cards.json"));
+        Card[] cards = gson.fromJson(cardsFile, Card[].class);
+        for (Card card: cards) {
+            return card.getClass();
+        }
+        return null;
+    }
+
+
+    public void Events() throws FileNotFoundException {
+        JsonReader cardsFile = new JsonReader(new FileReader("src/cards/cards.json"));
         Card[] cards = gson.fromJson(cardsFile, Card[].class);
         for (Card card: cards) {
             card.getEvent();
         }
     }
 
+    public Card file(int pos) throws FileNotFoundException {
+        JsonReader cardsFile = new JsonReader(new FileReader("src/cards.json"));
+        Card[] cards = gson.fromJson(cardsFile, Card[].class);
+        return cards[pos];
+
+    }
+
+
+    /**
+     * Create a new deck for players
+     */
+    public void createDeck() throws FileNotFoundException {
+        int count = 0;
+        int deckSize = 16;
+
+    }
 
     public int getId() {
         return id;
@@ -81,4 +108,7 @@ public class Card {
         return event;
     }
 
+    public String getFile(){
+        return file;
+    }
 }
