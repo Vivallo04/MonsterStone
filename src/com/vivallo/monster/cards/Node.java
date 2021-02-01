@@ -2,14 +2,15 @@ package com.vivallo.monster.cards;
 
 public class Node {
 
-    public Card[] element;
+    public Card element;
     public Node next = null;
+    public Node previous = null;
 
-    public Node(Card[] element) {
+    public Node(Card element) {
         this.element = element;
     }
 
-    public Card[] getElement(){
+    public Card getElement(){
         return this.element;
     }
 
