@@ -15,7 +15,7 @@ public class Game extends JFrame implements Runnable{
     private int WIDTH = 1285;
     private int HEIGHT = 939;
     private volatile boolean running = true;
-    public final BufferStrategy bufferStrategy = getBufferStrategy();
+    //public final BufferStrategy bufferStrategy = getBufferStrategy();
 
     //Game Assets
     private Image icon = Toolkit.getDefaultToolkit().getImage("assets/extras/icon.png");
@@ -40,7 +40,7 @@ public class Game extends JFrame implements Runnable{
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(WIDTH, HEIGHT);
         setResizable(false);
-        setIgnoreRepaint(true);
+        //setIgnoreRepaint(true);
         //createBufferStrategy(2);
         setVisible(true);
         setLocationRelativeTo(null);

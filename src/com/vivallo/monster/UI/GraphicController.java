@@ -14,19 +14,22 @@ import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.Random;
 
 public class GraphicController extends JPanel implements ActionListener {
 
 
     //Game assets
-    private final Image background;
+    private final BufferedImage background;
     private final Image cardStack;
-    private BufferedImage card;
+    private Image card;
     private int mouseX;
     private int mouseY;
     private Observer Observer;
     private DeckStack deck;
     private boolean takeCard = false;
+
+    Random random = new Random();
 
 
     /**
@@ -36,16 +39,15 @@ public class GraphicController extends JPanel implements ActionListener {
     public GraphicController() throws IOException {
 
         Card cards = new Card();
-
-        DeckStack deck = new DeckStack(cards.getCards());
-        deck.pushCard(cards.file(0));
+        int num = random.nextInt(30);
+        DeckStack deck = new DeckStack();
+        //deck.pushCard(cards.getRandomCard(num));
 
         cardStack = ImageIO.read(new File("assets/cards/cardFinalSize.png"));
         background = ImageIO.read(new File("assets/board/table.png"));
-        card = ImageIO.read(new File(deck.peek().getFile()));
-        createButton(cardStack, "Deck", 735, 340, 143, 206);
-        setLayout(null);
+        //card = ImageIO.read(new File(deck.peek().getFile()));
 
+        setLayout(null);
         dragCard();
 
     }
@@ -65,6 +67,7 @@ public class GraphicController extends JPanel implements ActionListener {
 
         }
 
+        createButton(cardStack, "Deck", 735, 340, 143, 206);
     }
 
 

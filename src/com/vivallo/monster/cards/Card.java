@@ -5,6 +5,7 @@ import com.google.gson.stream.JsonReader;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.util.Random;
 
 public class Card {
 
@@ -20,8 +21,11 @@ public class Card {
     protected boolean freeze;
     protected String event;
     protected String file;
+    private Random rand = new Random();
+    private boolean[] isUsed = new boolean[30];
 
     private static final Gson gson = new Gson();
+
 
     /**
      * Read "cards.json" file which contains all the
@@ -30,40 +34,49 @@ public class Card {
      * @return
      */
     public Class<? extends Card> getCards() throws FileNotFoundException {
-        JsonReader cardsFile = new JsonReader(new FileReader("src/cards.json"));
-        Card[] cards = gson.fromJson(cardsFile, Card[].class);
+        Card[] cards = readCard();
         for (Card card: cards) {
             return card.getClass();
         }
         return null;
     }
 
+    public Card[] readCard() throws FileNotFoundException {
+        JsonReader cardsFile = new JsonReader(new FileReader("src/cards.json"));
+        Card[] cards = gson.fromJson(cardsFile, Card[].class);
+        return cards;
+    }
 
     public void Events() throws FileNotFoundException {
-        JsonReader cardsFile = new JsonReader(new FileReader("src/cards/cards.json"));
-        Card[] cards = gson.fromJson(cardsFile, Card[].class);
+        Card[] cards = readCard();
         for (Card card: cards) {
             card.getEvent();
         }
     }
 
-    public Card file(int pos) throws FileNotFoundException {
-        JsonReader cardsFile = new JsonReader(new FileReader("src/cards.json"));
-        Card[] cards = gson.fromJson(cardsFile, Card[].class);
-        return cards[pos];
 
+    public Card getRandomCard(int num) throws FileNotFoundException {
+        Card[] cards = readCard();
+
+        if (isUsed[num] && num == 30) {
+            getRandomCard(1);
+        } else if (isUsed[num]) {
+            getRandomCard(num + 1);
+        }
+        isUsed[num] = true;
+        return cards[num];
     }
 
 
-    /**
-     * Create a new deck for players
-     */
-    public void createDeck() throws FileNotFoundException {
-        int count = 0;
-        int deckSize = 16;
-
+    public void resetIsUsed() {
+        for (int i = 0; i < isUsed.length; i++) {
+            isUsed[i] = false;
+        }
     }
 
+
+
+    // Getters & Setters -------------------------------------------------------- ||
     public int getId() {
         return id;
     }

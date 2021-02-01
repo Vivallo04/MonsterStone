@@ -1,25 +1,30 @@
 package com.vivallo.monster.player;
 
-import com.vivallo.monster.deck.Deck;
+import com.vivallo.monster.cards.Card;
+import com.vivallo.monster.deck.DeckStack;
 
 public class Player {
 
-    public Deck deck;
-    private int maxMana = 200;
-    private int minMana = 0;
+    public DeckStack<Card> deck;
     private int mana;
-    private int maxHealth = 1000;
-    private int minHealth = 0;
     private int health;
     private boolean power;
-    private int maxCards = 8;
+
+    private int maxMana = 200;
+    private int minMana = 0;
+
+    private int maxHealth = 1000;
+    private int minHealth = 0;
+
     private int cardCount;
 
 
-    public Player() {
+    public Player(DeckStack cards) {
         mana = 200;
         health = 1000;
         power = false;
+        deck = cards;
+        cardCount = 16;
 
     }
 

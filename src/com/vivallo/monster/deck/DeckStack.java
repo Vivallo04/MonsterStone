@@ -11,15 +11,16 @@ import java.util.EmptyStackException;
 */
 
 
-public class DeckStack {
+public class DeckStack<Card> {
 
-    public Node top;
+    public Node<Card> top;
     public int size = 0;
 
-    public DeckStack(Class<? extends Card> cardFiles) {
+    public DeckStack() {
         Node top = null;
         int size = 0;
     }
+
 
     /**
      *Add a card to the top of the
@@ -34,6 +35,7 @@ public class DeckStack {
         size++;
     }
 
+
     /**
      * Return Card at the top of the Stack
      * @return Card
@@ -45,6 +47,7 @@ public class DeckStack {
             return top.getElement();
         }
     }
+
 
     /**
      * Return if stackis empty

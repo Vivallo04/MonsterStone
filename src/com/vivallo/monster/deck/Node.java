@@ -1,11 +1,10 @@
 package com.vivallo.monster.deck;
 
-import com.vivallo.monster.cards.Card;
-
-public class Node {
+public class Node<Card> {
 
     public Card element;
-    public Node next;
+    public Node<Card> next;
+
 
     /**
      * Create a new Node that contains:
