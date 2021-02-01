@@ -3,20 +3,116 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="332.0" y="0.0">com.vivallo.monster.launcher.Main</node>
-    <node x="0.0" y="150.0">com.vivallo.monster.cards.Card</node>
-    <node x="7.0" y="0.0">com.vivallo.monster.cards.Node</node>
-    <node x="173.0" y="0.0">com.vivallo.monster.deck.Node</node>
+    <node x="619.6369047619047" y="236.5">com.vivallo.monster.deck.DeckStack</node>
+    <node x="311.12499999999994" y="303.5">com.vivallo.monster.UI.Observer</node>
+    <node x="331.61458333333326" y="1276.0">com.vivallo.monster.launcher.Main</node>
+    <node x="0.0" y="972.0">com.vivallo.monster.cards.CircularHand</node>
+    <node x="105.12499999999994" y="127.0">com.vivallo.monster.cards.Card</node>
+    <node x="336.11458333333326" y="1038.5">com.vivallo.monster.UI.Game</node>
+    <node x="529.8165922619046" y="1060.5">com.vivallo.monster.player.WarManager</node>
+    <node x="74.25" y="724.5">com.vivallo.monster.cards.Node</node>
+    <node x="261.20833333333326" y="691.5">com.vivallo.monster.UI.GraphicController</node>
+    <node x="642.1369047619047" y="0.0">com.vivallo.monster.deck.Node</node>
+    <node x="582.2083333333333" y="614.0">com.vivallo.monster.player.Player</node>
   </nodes>
   <notes />
-  <edges />
-  <settings layout="Hierarchic Group" zoom="1.2000000000000002" x="653.0" y="222.0" />
-  <SelectedNodes />
+  <edges>
+    <edge source="com.vivallo.monster.UI.GraphicController" target="com.vivallo.monster.cards.Card">
+      <point x="-125.41666666666663" y="-71.5" />
+      <point x="286.29166666666663" y="574.0" />
+      <point x="232.99999999999994" y="574.0" />
+      <point x="34.875" y="203.5" />
+    </edge>
+    <edge source="com.vivallo.monster.cards.CircularHand" target="com.vivallo.monster.cards.Card">
+      <point x="-78.75" y="-127.0" />
+      <point x="26.25" y="952.0" />
+      <point x="63.75" y="952.0" />
+      <point x="63.75" y="584.0" />
+      <point x="116.74999999999994" y="584.0" />
+      <point x="-81.375" y="203.5" />
+    </edge>
+    <edge source="com.vivallo.monster.player.WarManager" target="com.vivallo.monster.deck.DeckStack">
+      <point x="111.25" y="-38.5" />
+      <point x="774.5665922619046" y="952.0" />
+      <point x="790.7083333333333" y="952.0" />
+      <point x="790.7083333333333" y="584.0" />
+      <point x="767.2797619047618" y="584.0" />
+      <point x="68.14285714285711" y="94.0" />
+    </edge>
+    <edge source="com.vivallo.monster.UI.Game" target="com.vivallo.monster.UI.GraphicController">
+      <point x="0.0" y="-60.5" />
+      <point x="406.11458333333326" y="952.0" />
+      <point x="411.70833333333326" y="952.0" />
+      <point x="0.0" y="71.5" />
+    </edge>
+    <edge source="com.vivallo.monster.launcher.Main" target="com.vivallo.monster.UI.Game">
+      <point x="0.0" y="-27.0" />
+      <point x="0.0" y="60.5" />
+    </edge>
+    <edge source="com.vivallo.monster.player.Player" target="com.vivallo.monster.deck.DeckStack">
+      <point x="0.0" y="-149.0" />
+      <point x="675.7083333333333" y="594.0" />
+      <point x="699.1369047619047" y="594.0" />
+      <point x="0.0" y="94.0" />
+    </edge>
+    <edge source="com.vivallo.monster.UI.GraphicController" target="com.vivallo.monster.deck.DeckStack">
+      <point x="25.08333333333337" y="-71.5" />
+      <point x="436.79166666666663" y="564.0" />
+      <point x="630.9940476190476" y="564.0" />
+      <point x="-68.14285714285711" y="94.0" />
+    </edge>
+    <edge source="com.vivallo.monster.UI.GraphicController" target="com.vivallo.monster.UI.Observer">
+      <point x="-25.083333333333314" y="-71.5" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="com.vivallo.monster.cards.Node" target="com.vivallo.monster.cards.Card">
+      <point x="-28.5" y="-38.5" />
+      <point x="102.75" y="594.0" />
+      <point x="139.99999999999994" y="594.0" />
+      <point x="-58.125" y="203.5" />
+    </edge>
+    <edge source="com.vivallo.monster.player.WarManager" target="com.vivallo.monster.cards.Card">
+      <point x="-66.75" y="-38.5" />
+      <point x="596.5665922619046" y="932.0" />
+      <point x="228.21242559523802" y="932.0" />
+      <point x="228.21242559523802" y="584.0" />
+      <point x="209.74999999999994" y="584.0" />
+      <point x="11.625" y="203.5" />
+    </edge>
+    <edge source="com.vivallo.monster.player.WarManager" target="com.vivallo.monster.player.Player">
+      <point x="-22.25" y="-38.5" />
+      <point x="641.0665922619046" y="952.0" />
+      <point x="628.9583333333333" y="952.0" />
+      <point x="-46.75" y="149.0" />
+    </edge>
+    <edge source="com.vivallo.monster.deck.DeckStack" target="com.vivallo.monster.deck.Node">
+      <point x="-53.0" y="-94.0" />
+      <point x="646.1369047619047" y="102.0" />
+      <point x="661.1369047619047" y="102.0" />
+      <point x="-38.0" y="38.5" />
+    </edge>
+    <edge source="com.vivallo.monster.cards.CircularHand" target="com.vivallo.monster.cards.Node">
+      <point x="-26.25" y="-127.0" />
+      <point x="78.75" y="952.0" />
+      <point x="93.25" y="952.0" />
+      <point x="-38.0" y="38.5" />
+    </edge>
+    <edge source="com.vivallo.monster.player.Player" target="com.vivallo.monster.cards.Card">
+      <point x="-62.33333333333337" y="-149.0" />
+      <point x="613.3749999999999" y="554.0" />
+      <point x="279.49999999999994" y="554.0" />
+      <point x="81.375" y="203.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="653.0000000000001" y="902.0" />
+  <SelectedNodes>
+    <node>com.vivallo.monster.UI.Observer</node>
+  </SelectedNodes>
   <Categories>
-    <Category>Fields</Category>
     <Category>Constructors</Category>
-    <Category>Properties</Category>
     <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
   </Categories>
   <SCOPE>All</SCOPE>
   <VISIBILITY>private</VISIBILITY>

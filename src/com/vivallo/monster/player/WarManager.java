@@ -5,9 +5,12 @@ import com.vivallo.monster.deck.DeckStack;
 
 import java.io.FileNotFoundException;
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class WarManager {
 
+    private static final Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
     private static Card cards;
     private static Player player1;
     private static Player player2;
@@ -42,6 +45,10 @@ public class WarManager {
             count++;
         }
         return deck;
+    }
+
+    public static void main(String[] args) {
+        logger.log(Level.FINE, "PRUEBA");
     }
 
 }
