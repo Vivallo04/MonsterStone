@@ -3,22 +3,24 @@ package com.vivallo.monster.UI;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferStrategy;
+import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.logging.*;
 
 public class Game extends JFrame implements Runnable{
 
     private final Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
+
     //Game Constants
-    private int WIDTH = 1285;
-    private int HEIGHT = 939;
+    private int WIDTH = 1420;
+    private int HEIGHT = 962;
     private volatile boolean running = true;
-    //public final BufferStrategy bufferStrategy = getBufferStrategy();
+
 
     //Game Assets
     private Image icon = Toolkit.getDefaultToolkit().getImage("assets/extras/icon.png");
+
 
     /**
      * Main Thread, run run method
@@ -50,7 +52,7 @@ public class Game extends JFrame implements Runnable{
 
         } catch (IOException exception) {
             exception.printStackTrace();
-            logger.log(Level.SEVERE, "Unable to initialize game graphics");
+            logger.log(Level.SEVERE, "Unable to initialize game graphics", exception);
             System.out.println("ERROR");
         }
 
@@ -66,6 +68,13 @@ public class Game extends JFrame implements Runnable{
     public void run() {
 
         new Thread().start();
+
+        try {
+            setupLogger();
+        } catch (IOException exception) {
+            exception.printStackTrace();
+        }
+
         while (running) {
             drawGame();
             run();
@@ -76,7 +85,8 @@ public class Game extends JFrame implements Runnable{
 
             } catch (InterruptedException e) {
                 e.printStackTrace();
-                logger.log(Level.SEVERE, "Unable to run game main loop");
+                logger.log(Level.SEVERE, "Unable to run game main loop", e);
+
             }
         }
         stop();
@@ -91,5 +101,17 @@ public class Game extends JFrame implements Runnable{
     }
 
 
+    public void setupLogger() throws IOException {
+        LogManager.getLogManager().reset();
+        logger.setLevel(Level.ALL);
+
+        //Console Handler
+        ConsoleHandler ch = new ConsoleHandler();
+        ch.setLevel(Level.WARNING);
+        logger.addHandler(ch);
+
+        //TODO Research on the file handler
+
+    }
 
 }

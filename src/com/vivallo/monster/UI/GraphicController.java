@@ -22,13 +22,17 @@ public class GraphicController extends JPanel implements ActionListener {
     //Game assets
     private final BufferedImage background;
     private final Image cardStack;
+    private BufferedImage cardHolder;
+
+    private Observer Observer;
     private Image card;
     private int mouseX;
     private int mouseY;
-    private Observer Observer;
     private DeckStack deck;
-    private boolean takeCard = false;
 
+
+    private boolean takeCard = false;
+    private boolean occupied = false;
     Random random = new Random();
 
 
@@ -38,15 +42,9 @@ public class GraphicController extends JPanel implements ActionListener {
      */
     public GraphicController() throws IOException {
 
-        Card cards = new Card();
-        int num = random.nextInt(30);
-        DeckStack deck = new DeckStack();
-        //deck.pushCard(cards.getRandomCard(num));
-
         cardStack = ImageIO.read(new File("assets/cards/cardFinalSize.png"));
-        background = ImageIO.read(new File("assets/board/table.png"));
-        //card = ImageIO.read(new File(deck.peek().getFile()));
-
+        background = ImageIO.read(new File("assets/board/board1.png"));
+        cardHolder = ImageIO.read(new File("assets/cards/CardHolder.png"));
         setLayout(null);
         dragCard();
 
@@ -61,13 +59,21 @@ public class GraphicController extends JPanel implements ActionListener {
         super.paintComponent(graphics);
 
         graphics.drawImage(background, 0, 0, Observer);
+        createButton(cardStack, "Deck", 750, 355, 143, 206);
+
+        createButton(cardHolder, "placeCard", 1010, 210, 143, 206);
+        createButton(cardHolder, "placeCard", 1010, 440, 143, 206);
+        createButton(cardHolder, "placeCard", 1010, 660, 143, 206);
+
+        createButton(cardHolder, "placeCard", 1210, 210, 143, 206);
+        createButton(cardHolder, "placeCard", 1210, 440, 143, 206);
+        createButton(cardHolder, "placeCard", 1210, 660, 143, 206);
 
         if (takeCard == true) {
             graphics.drawImage(card, mouseX, mouseY, Observer);
 
         }
 
-        createButton(cardStack, "Deck", 735, 340, 143, 206);
     }
 
 
@@ -75,7 +81,6 @@ public class GraphicController extends JPanel implements ActionListener {
      *Handle Mouse events
      */
     public void dragCard() {
-
         addMouseMotionListener(new MouseMotionListener() {
 
             @Override
@@ -110,6 +115,11 @@ public class GraphicController extends JPanel implements ActionListener {
         String action = event.getActionCommand();
         if (action.equals("Deck")) {
             takeCard = true;
+            System.out.println("Working");
+        }
+        if (action.equals("placeCard")) {
+            occupied = true;
+            System.out.println("working2");
         }
     }
 

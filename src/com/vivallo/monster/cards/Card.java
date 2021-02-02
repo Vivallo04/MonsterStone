@@ -59,9 +59,9 @@ public class Card {
         Card[] cards = readCard();
 
         if (isUsed[num] && num == 30) {
-            getRandomCard(1);
+            return getRandomCard(1);
         } else if (isUsed[num]) {
-            getRandomCard(num + 1);
+            return getRandomCard(num + 1);
         }
         isUsed[num] = true;
         return cards[num];
