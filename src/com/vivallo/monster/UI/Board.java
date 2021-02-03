@@ -2,6 +2,7 @@ package com.vivallo.monster.UI;
 
 import com.vivallo.monster.cards.Card;
 import com.vivallo.monster.deck.DeckStack;
+import com.vivallo.monster.player.WarManager;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -16,19 +17,19 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Random;
 
-public class GraphicController extends JPanel implements ActionListener {
+public class Board extends JPanel implements ActionListener {
 
 
     //Game assets
-    private final BufferedImage background;
-    private final Image cardStack;
+    private BufferedImage background;
     private BufferedImage cardHolder;
+    private BufferedImage cardStack;
+    private BufferedImage card;
 
+    private WarManager warManager;
     private Observer Observer;
-    private Image card;
     private int mouseX;
     private int mouseY;
-    private DeckStack deck;
 
 
     private boolean takeCard = false;
@@ -40,16 +41,19 @@ public class GraphicController extends JPanel implements ActionListener {
      * Constructor, draw everything on screen
      * @throws IOException Not found
      */
-    public GraphicController() throws IOException {
-
-        cardStack = ImageIO.read(new File("assets/cards/cardFinalSize.png"));
-        background = ImageIO.read(new File("assets/board/board1.png"));
-        cardHolder = ImageIO.read(new File("assets/cards/CardHolder.png"));
+    public Board() throws IOException {
+        setGameAssets();
         setLayout(null);
         dragCard();
 
     }
 
+    public void setGameAssets() throws IOException {
+        background = ImageIO.read(new File("assets/board/board1.png"));
+        cardStack = ImageIO.read(new File("assets/cards/cardFinalSize.png"));
+        cardHolder = ImageIO.read(new File("assets/cards/CardHolder.png"));
+        card = ImageIO.read(new File("assets/cards/minions/card1.png"));
+    }
 
     /**
      * Paint graphics onto the screen
@@ -58,22 +62,15 @@ public class GraphicController extends JPanel implements ActionListener {
     public void paintComponent(Graphics graphics) {
         super.paintComponent(graphics);
 
+        //Draw the game board
         graphics.drawImage(background, 0, 0, Observer);
-        createButton(cardStack, "Deck", 750, 355, 143, 206);
-
-        createButton(cardHolder, "placeCard", 1010, 210, 143, 206);
-        createButton(cardHolder, "placeCard", 1010, 440, 143, 206);
-        createButton(cardHolder, "placeCard", 1010, 660, 143, 206);
-
-        createButton(cardHolder, "placeCard", 1210, 210, 143, 206);
-        createButton(cardHolder, "placeCard", 1210, 440, 143, 206);
-        createButton(cardHolder, "placeCard", 1210, 660, 143, 206);
+        //Paint the UI buttons
+        setUI();
 
         if (takeCard == true) {
             graphics.drawImage(card, mouseX, mouseY, Observer);
 
         }
-
     }
 
 
@@ -98,6 +95,15 @@ public class GraphicController extends JPanel implements ActionListener {
         });
     }
 
+    public void setUI() {
+        createButton(cardStack, "Deck", 750, 355, 143, 206);
+        createButton(cardHolder, "placeCard", 1010, 210, 143, 206);
+        createButton(cardHolder, "placeCard", 1010, 440, 143, 206);
+        createButton(cardHolder, "placeCard", 1010, 660, 143, 206);
+        createButton(cardHolder, "placeCard", 1210, 210, 143, 206);
+        createButton(cardHolder, "placeCard", 1210, 440, 143, 206);
+        createButton(cardHolder, "placeCard", 1210, 660, 143, 206);
+    }
 
     public void createButton(Image file, String action, int x, int y, int w, int h) {
         JButton button = new JButton(new ImageIcon(file));
@@ -108,7 +114,6 @@ public class GraphicController extends JPanel implements ActionListener {
         button.setBounds(x, y, w, h);
         add(button);
     }
-
 
     @Override
     public void actionPerformed(ActionEvent event) {

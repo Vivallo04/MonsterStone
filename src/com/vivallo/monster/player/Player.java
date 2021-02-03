@@ -19,11 +19,11 @@ public class Player {
     private int cardCount;
 
 
-    public Player(DeckStack cards) {
+    public Player(DeckStack deck) {
         mana = 200;
         health = 1000;
         power = false;
-        deck = cards;
+        deck = deck;
         cardCount = 16;
 
     }

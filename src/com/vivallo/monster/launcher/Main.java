@@ -9,7 +9,6 @@ package com.vivallo.monster.launcher;
  */
 
 import com.vivallo.monster.UI.Game;
-import com.vivallo.monster.cards.Card;
 
 import java.io.IOException;
 

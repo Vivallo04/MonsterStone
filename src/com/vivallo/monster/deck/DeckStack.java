@@ -78,7 +78,6 @@ public class DeckStack<Card> {
         Card currentNode = top.getElement();
         top = top.next;
         this.size--;
-        //return currentNode;
     }
 
 

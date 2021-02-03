@@ -2,8 +2,6 @@ package com.vivallo.monster.UI;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.image.BufferStrategy;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.logging.*;
 
@@ -17,7 +15,6 @@ public class Game extends JFrame implements Runnable{
     private int HEIGHT = 962;
     private volatile boolean running = true;
 
-
     //Game Assets
     private Image icon = Toolkit.getDefaultToolkit().getImage("assets/extras/icon.png");
 
@@ -28,7 +25,6 @@ public class Game extends JFrame implements Runnable{
      */
     public Game() {
         run();
-
     }
 
     /**
@@ -42,13 +38,13 @@ public class Game extends JFrame implements Runnable{
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(WIDTH, HEIGHT);
         setResizable(false);
-        //setIgnoreRepaint(true);
+        setIgnoreRepaint(false);
         //createBufferStrategy(2);
         setVisible(true);
         setLocationRelativeTo(null);
 
         try {
-            add(new GraphicController());
+            add(new Board());
 
         } catch (IOException exception) {
             exception.printStackTrace();
@@ -57,7 +53,6 @@ public class Game extends JFrame implements Runnable{
         }
 
     }
-
 
     /**
      * Start Game class as a new Thread and
@@ -68,17 +63,17 @@ public class Game extends JFrame implements Runnable{
     public void run() {
 
         new Thread().start();
-
         try {
             setupLogger();
         } catch (IOException exception) {
             exception.printStackTrace();
+            logger.log(Level.FINE, "Unable to setup logger", exception);
         }
 
         while (running) {
             drawGame();
-            run();
             repaint();
+
 
             try {
                 Thread.sleep(60);
@@ -92,7 +87,6 @@ public class Game extends JFrame implements Runnable{
         stop();
     }
 
-
     /**
      * Exit the application
      */
@@ -100,7 +94,10 @@ public class Game extends JFrame implements Runnable{
         System.exit(0);
     }
 
-
+    /**
+     * Configure the logger
+     * @throws IOException
+     */
     public void setupLogger() throws IOException {
         LogManager.getLogManager().reset();
         logger.setLevel(Level.ALL);
@@ -114,4 +111,19 @@ public class Game extends JFrame implements Runnable{
 
     }
 
+    /**
+     * Get screen's width
+     * @return int witdth
+     */
+    public int getWIDTH() {
+        return WIDTH;
+    }
+
+    /**
+     * Get screen's height
+     * @return int height
+     */
+    public int getHEIGHT() {
+        return HEIGHT;
+    }
 }
