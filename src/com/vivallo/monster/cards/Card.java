@@ -2,6 +2,7 @@ package com.vivallo.monster.cards;
 
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
+import com.vivallo.monster.deck.DeckStack;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -57,14 +58,13 @@ public class Card {
 
     public Card getRandomCard(int num) throws FileNotFoundException {
         Card[] cards = readCard();
-
-        if (isUsed[num] && num == 30) {
-            return getRandomCard(1);
-        } else if (isUsed[num]) {
-            return getRandomCard(num + 1);
+        int rnum = new Random().nextInt(30);
+        if (isUsed[num]) {
+            return getRandomCard(rnum);
+        } else {
+            isUsed[num] = true;
+            return cards[num];
         }
-        isUsed[num] = true;
-        return cards[num];
     }
 
 
@@ -74,9 +74,21 @@ public class Card {
         }
     }
 
+    public void createDeck(DeckStack<Card> deck) throws FileNotFoundException {
+        int count = 0;
+        int rnum = new Random().nextInt(30);
+
+        while (count < 8) {
+            deck.pushCard(getRandomCard(rnum));
+            count++;
+        }
+        resetIsUsed();
+
+    }
 
 
     // Getters & Setters -------------------------------------------------------- ||
+
     public int getId() {
         return id;
     }

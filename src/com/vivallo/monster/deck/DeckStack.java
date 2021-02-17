@@ -16,6 +16,7 @@ public class DeckStack<Card> {
     public Node<Card> top;
     public int size = 0;
 
+
     public DeckStack() {
         Node top = null;
         int size = 0;

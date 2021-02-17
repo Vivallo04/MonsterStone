@@ -1,14 +1,23 @@
 package com.vivallo.monster.player;
 
 import com.vivallo.monster.cards.Card;
+import com.vivallo.monster.cards.CircularHand;
 import com.vivallo.monster.deck.DeckStack;
+
+import javax.imageio.ImageIO;
+import java.awt.*;
+import java.awt.image.CropImageFilter;
+import java.io.File;
+import java.io.IOException;
 
 public class Player {
 
-    public DeckStack<Card> deck;
+    private CircularHand hand;
+
     private int mana;
     private int health;
     private boolean power;
+
 
     private int maxMana = 200;
     private int minMana = 0;
@@ -19,22 +28,43 @@ public class Player {
     private int cardCount;
 
 
-    public Player(DeckStack deck) {
+    public Player(Card cards) {
+        hand = new CircularHand();
         mana = 200;
         health = 1000;
         power = false;
-        deck = deck;
+        cards = cards;
         cardCount = 16;
+
 
     }
 
-    //Card Methods -----------------------------------
+
+    public void addCard(DeckStack<Card> deck) {
+         hand.appendCard(deck.peek());
+         deck.pop();
+    }
+
+    public Image getCardImageFile() throws IOException {
+        int counter = 0;
+
+        while (counter <= hand.getSize()) {
+            return ImageIO.read(new File(hand.getCardAt(1).getElement().getFile()));
+        };
+        return null;
+    }
+
+
+
+
+    //Card Methods ----------------------------------- ||
     public void playCard(String cardID) {
 
     }
 
     public boolean maxPower() {
-        return power = true;
+        this.power = true;
+        return power;
     }
 
     public int getCardCount() {

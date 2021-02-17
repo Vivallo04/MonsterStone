@@ -29,12 +29,15 @@ public class CircularHand {
         newNode.previous = null;
 
         if (isEmpty()) {
+            size++;
             head.previous = newNode;
         }
+        size++;
         head = newNode;
     }
 
     public void insertAfter(Node prev, Node element) {
+        size++;
         element.previous = prev;
         element.next = prev.next;
         element.next.previous = element;
@@ -83,6 +86,7 @@ public class CircularHand {
 
 
     public void removeCard(Node card) {
+        size--;
         if (head.next == head) {
             head = null;
         } else {
@@ -95,6 +99,9 @@ public class CircularHand {
         }
     }
 
+    public int getSize() {
+        return size;
+    }
 
     public boolean isEmpty() {
         return size == 0;

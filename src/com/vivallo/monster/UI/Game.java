@@ -1,11 +1,15 @@
 package com.vivallo.monster.UI;
 
+import com.vivallo.monster.player.WarManager;
+
 import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
+import java.util.Observable;
+import java.util.Observer;
 import java.util.logging.*;
 
-public class Game extends JFrame implements Runnable{
+public class Game extends JFrame implements Runnable, Observer {
 
     private final Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
@@ -125,5 +129,10 @@ public class Game extends JFrame implements Runnable{
      */
     public int getHEIGHT() {
         return HEIGHT;
+    }
+
+    @Override
+    public void update(Observable o, Object arg) {
+
     }
 }
